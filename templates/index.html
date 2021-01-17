@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block content %}
+<script>
+	function data(){
+		val = String(document.getElementById('fileimg').value)
+		file = val.split("\\")
+		file=file[file.length-1]
+		document.getElementById('d').innerHTML = file
+	}
+	function data2(){
+		val = String(document.getElementById('filedoc').value)
+		file = val.split("\\")
+		file=file[file.length-1]
+		document.getElementById('d2').innerHTML = file
+	}
+</script>
+<center>
+	<h1 class="text text-primary">Send Free Emails <span class="glyphicon glyphicon-envelope"> </span></h1>
+	<form action="/" method="post" enctype="multipart/form-data">
+		<table>
+		<!-- TO Address -->
+		<tr>
+			<td>
+		<label id="to" for="address"><h4>To:</h4></label>
+			</td>
+			<td>
+		<input class="form-control" id="address" type="text" name="address" size="50" placeholder="eg:name@domain.com" required />
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><small class="text text-muted">(Enter Multiple Email Addresses by separating with commas(,))</small></td>
+		</tr>
+		<!-- Subject -->
+		<tr>
+			<td>
+		<label id="subject" for="subjectbox"><h4>Subject:</h4></label>
+			</td>
+			<td>
+		<input class="form-control" id="subjectbox" type="text" name="subject" size="50" required />
+			</td>
+		</tr>
+
+		<!-- Body content -->
+		<tr>
+			<td>
+				<label id="body" for="bodytext"><h4>Body:</h4></label>
+			</td>
+
+			<td>
+				<textarea name="body" rows="10" cols="50" class="form-control"></textarea>
+			</td>
+		</tr>
+
+		<tr>
+			
+		<td></td>
+
+				
+			<td>
+					<label for="fileimg" class="btn btn-success"><span class="glyphicon glyphicon-picture"></span></label>
+					
+					<input type="file" name="file1" id="fileimg" style="display:none" accept="image/*" oninput="data()">
+					<small id="d"></small>	 
+
+					<label for="filedoc" class="btn btn-success"><span class="glyphicon glyphicon-file"></span></label>
+					
+					<input type="file" name="file2" id="filedoc" style="display:none"  oninput="data2()">
+					<small id="d2"></small>	
+
+			</td>
+				
+			
+		</tr>
+
+
+		<!-- Send -->
+		<tr>
+			<td>
+				
+			</td>
+			<td>
+				<br>
+		<button type="submit" name="submit" class="btn btn-success">SEND 
+		 <span class="glyphicon glyphicon-send"></span></button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+			</td>
+			<td>
+				<small class="text text-muted">Note: If Mail not appeared in Inbox then please check Spam Box.</small>
+			</td>
+		</tr>
+		</table>
+	</form>	
+</center>
+{% endblock %}

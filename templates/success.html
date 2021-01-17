@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="container">
+		 <a href="{{ url_for('home') }}" class="btn btn-info">
+          <span class="glyphicon glyphicon-arrow-left"></span>
+        </a>
+	<h2 class="text text-success">{{ msg }}</h2>
+		{% for address in addresses %}
+		<a href="mailto:{{ address }}" class="btn btn-link">{{ address }}</a>
+		{% endfor %}
+	</div>
+{% endblock %}
