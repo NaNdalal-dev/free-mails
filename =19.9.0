@@ -1,0 +1,3 @@
+Collecting gunicorn
+  Using cached gunicorn-20.0.4-py2.py3-none-any.whl (77 kB)
+Requirement already satisfied: setuptools>=3.0 in /home/adminsys/webProjects/venv/lib/python3.7/site-packages (from gunicorn) (45.2.0)
